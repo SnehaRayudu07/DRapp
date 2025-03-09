@@ -11,6 +11,7 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.drapp.ml.ComFineTunedModelOptimized
 import org.tensorflow.lite.DataType
@@ -35,6 +36,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        showDisclaimerDialog()
+
         gallery = findViewById(R.id.button2)
         result = findViewById(R.id.result)
         resultDec = findViewById(R.id.classified)
@@ -46,6 +49,17 @@ class MainActivity : AppCompatActivity() {
             val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
             startActivityForResult(galleryIntent, 1)
         }
+    }
+
+    private fun showDisclaimerDialog() {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Disclaimer")
+        builder.setMessage("This tool is for informational purposes only. Always seek professional healthcare advice.")
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss() // Closes the dialog and proceeds
+        }
+        builder.setCancelable(false) // Prevents dismissal by clicking outside
+        builder.show()
     }
 
     private fun classifyImage(image: Bitmap) {
