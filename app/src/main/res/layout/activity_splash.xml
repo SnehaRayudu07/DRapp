@@ -6,7 +6,6 @@
     android:gravity="center">
 
     <ImageView
-        android:id="@+id/splashLogo"
         android:layout_width="205dp"
         android:layout_height="200dp"
         android:layout_centerInParent="true"

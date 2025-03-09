@@ -1,8 +1,7 @@
 package com.example.drapp
 
-import android.Manifest
+
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.media.ThumbnailUtils
 import android.net.Uri
@@ -15,8 +14,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.drapp.ml.ComFineTunedModelOptimized
 import org.tensorflow.lite.DataType
-//import org.tensorflow.lite.Interpreter
-//import org.tensorflow.lite.support.model.Model
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.io.IOException
 import java.nio.ByteBuffer
